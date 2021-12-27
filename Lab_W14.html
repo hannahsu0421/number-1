@@ -1,0 +1,22 @@
+<html>
+<body>
+
+ 
+<p id="sentence"> </p>
+	<script type="text/javascript">
+		var sentence;
+		sentence=window.prompt("input a sentence");
+
+		var search;
+		search=window.prompt("input a char to search");
+		var result1=sentence.indexOf(search);
+		var result2=sentence.lastIndexOf(search);
+		var result3=sentence.indexOf(search, 3);
+		document.getElementById("sentence").innerHTML=result1+"<br>"+result2+"<br>"+result3+"<br>";
+		
+
+	</script>
+</body>
+
+
+</html>

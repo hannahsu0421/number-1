@@ -1,0 +1,107 @@
+<html>
+<body>	
+<center>
+	<link rel="stylesheet" type="text/css" href="Lab_W13.css">
+	<div class="div1">
+	<div id="block">
+	<h2 class="header">JS Calculator</h2>
+<form>
+
+	<label>  Number 1   </label>
+	<br>
+	<input type="number" id="text1" class="input_box">
+	<br>
+	<label>  Number 2  </label>
+	<br>
+	<input type="number" id="text2" class="input_box">
+	<br>
+	<label>  Operate way?  </label>
+	<br>
+
+	<select id="operate" onchange="setButton(this.value)">
+
+		<option value="0">+</option>
+		<option value="1">-</option>
+		<option value="2">*</option>
+		<option value="3">/</option>
+	</select>
+<br>
+	<input type="button" id="click" value="count" onclick="calculator()"
+	style="width:200px; height:40px; border:3px;background-color:red;">
+</div>
+</form> 
+<div id="result">
+	<div><p>Result=</p></div>
+</center>
+</div>
+	<script type="text/javascript">
+
+		function calculator(){
+			var n1=parseInt(document.getElementById("text1").value);
+			var n2=parseInt(document.getElementById("text2").value);
+			var operator=parseInt(document.getElementById("operate").value);
+			var answer;
+
+			if (operator==0) {
+				answer=a+b;
+				output();
+
+			}
+			else if(operator==1){
+				answer=a-b;
+				output();
+			}
+
+			else if(operator==2){
+				answer=a*b;
+				output();
+			}
+			else if(operator==3){
+				answer=a/b;
+				output();
+			}
+		}
+
+		function setButton( click2){
+			var button=document.getElementById("click");
+			if(click2=="0"){
+				button.value="Add";
+			}
+			else if(click2=="1"){
+				button.value="Minus";
+			}
+			else if(click2=="2"){
+				button.value="Product";
+			}
+			else if(click2=="3"){
+				button.value="Divide";
+			}
+		}
+
+		function output(){
+			var newLine=document.createElement("div");
+			var textNode=document.createTextNode("answer");
+			newLine.appendChilld(textNode);
+			document.getElementById("result").appendChilld(newLine);
+		 }
+
+		
+
+	
+
+
+
+		
+
+	</script>
+	<style>
+
+
+	</style>
+
+
+
+
+
+</body>
+</html>
