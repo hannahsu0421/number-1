@@ -2,23 +2,23 @@
 <body>
 	<link rel="stylesheet" type="text/css" href="Lab_W13.css">
 	<div class="div1">
-		<div id="block">
-	<head><label><h1>
+		<div id="block" class="a">
+	<label><h1>
 	Guessing Game
-	</head></h1></label>
+	</h1></label>
 	<form>
 	Your Guess(1~100)
-	</form>
 	<input type="number" id="num" name="guess">
+	</form>
 	<input type="button" id="guessBtn"value="play" class="play" onClick="guess()"
 	style="width:200px; height:40px; border:3px;background-color:red;">
-	<table id="table">
+	<table id="table" class="b">
 	<br>
 	<tr><th>Result</th></tr>
 	</table>
 </div>
 <script>
-	var random= Math.floor((Math.random()*100)+1);
+	var random = Math.floor((Math.random()*100)+1);
 	var min=1;
 	var max=100;
 
@@ -28,24 +28,29 @@
 			alert("Bingo!");
 			location.reload();
 		}
-		while(input!=random){
+		else{
 			if(input>random){
-				if(input<max){
-					max=input;
-				}
-				var tr= document.creatElement("tr");
-				var td= document.creatElement("td");
-				var text=document.creatTextNode(min+"~"+max);
-				td.appendChild(text);
-				tr.appendChild(td);
-				document.getElementById("table").appendChild(tr);
-				break;
-			}	
-		}
+				max=input;
+			}
+			else{
+					min=input;
+			}
+			var tr= document.creatElement("tr");
+			var td= document.creatElement("td");
+			var text=document.creatTextNode(min+"~"+max);
+			td.appendChild(text);
+			tr.appendChild(td);
+			document.getElementById("table").appendChild(tr);
+				
+		}	
 		
-	
-</script>
+		document.getElementById("num").value=null;
+	}	
+</script>	
+</div1>
+</body>
 
+</html>
 
 
 
